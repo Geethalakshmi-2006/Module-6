@@ -43,6 +43,7 @@ cir=Circle()#object created for the class 'Rectangle'
 print("Area of a rectangle:", rec.calculate_area()) #call to 'calculate_area' method defined inside the class 'Rectangle'
 print("Area of a circle:", cir.calculate_area()) #call to 'calculate_area' method defined inside the class 'Circle'.
 Output
-image
+<img width="1105" height="253" alt="image" src="https://github.com/user-attachments/assets/90b34205-aebc-4521-8784-6a4d09ce5bc1" />
+
 Result
 Thus, the python program is executed successfully.
