@@ -1,49 +1,62 @@
-Python OOP: Abstract Class & Method Example
-🎯 AIM
-To create an abstract class named Shape with an abstract method calculate_area, and implement this method in two subclasses: Rectangle and Circle.
+# 🐍 Python OOP: Abstract Class & Method Example
 
-🧠 ALGORITHM
-Import ABC module:
+## 🎯 AIM
 
-Use from abc import ABC, abstractmethod to define abstract classes and methods.
-Create Abstract Class Shape:
+To create an **abstract class** named `Shape` with an **abstract method** `calculate_area`, and implement this method in two subclasses: `Rectangle` and `Circle`.
 
-Define an abstract method calculate_area() with @abstractmethod.
-Create Subclass Rectangle:
+---
 
-Set default values for length and breadth.
-Override calculate_area() to compute the rectangle area.
-Create Subclass Circle:
+## 🧠 ALGORITHM
 
-Set default value for radius.
-Override calculate_area() to compute the circle area.
-Create Objects & Call Methods:
+1. **Import ABC module**:
+   - Use `from abc import ABC, abstractmethod` to define abstract classes and methods.
 
-Instantiate Rectangle and Circle.
-Call their calculate_area() methods.
-💻 Program
-from abc import ABC
+2. **Create Abstract Class `Shape`**:
+   - Define an abstract method `calculate_area()` with `@abstractmethod`.
+
+3. **Create Subclass `Rectangle`**:
+   - Set default values for `length` and `breadth`.
+   - Override `calculate_area()` to compute the rectangle area.
+
+4. **Create Subclass `Circle`**:
+   - Set default value for `radius`.
+   - Override `calculate_area()` to compute the circle area.
+
+5. **Create Objects & Call Methods**:
+   - Instantiate `Rectangle` and `Circle`.
+   - Call their `calculate_area()` methods.
+
+---
+
+## 💻 Program
+```
+from abc import ABC, abstractmethod
+import math
 class Shape(ABC):
+    @abstractmethod
     def calculate_area(self):
         pass
 class Rectangle(Shape):
-    length = 5
-    breadth =3 
+    def __init__(self, length=1, breadth=1):
+        self.length = length
+        self.breadth = breadth
+
     def calculate_area(self):
         return self.length * self.breadth
-
 class Circle(Shape):
-  radius = 4
-  def calculate_area(self):
-        return self.radius * self.radius*3.14
+    def __init__(self, radius=1):
+        self.radius = radius
 
-rec=Rectangle()
-cir=Circle()#object created for the class 'Rectangle'
-#object created for the class 'Circle'
-print("Area of a rectangle:", rec.calculate_area()) #call to 'calculate_area' method defined inside the class 'Rectangle'
-print("Area of a circle:", cir.calculate_area()) #call to 'calculate_area' method defined inside the class 'Circle'.
-Output
-<img width="1105" height="253" alt="image" src="https://github.com/user-attachments/assets/90b34205-aebc-4521-8784-6a4d09ce5bc1" />
+    def calculate_area(self):
+        return math.pi * self.radius *self radius
+rect = Rectangle(5, 3)
+circle = Circle(4)
 
-Result
-Thus, the python program is executed successfully.
+print("Area of Rectangle:", rect.calculate_area())
+print("Area of Circle:", circle.calculate_area())
+```
+## Output
+<img width="858" height="181" alt="image" src="https://github.com/user-attachments/assets/39621da1-6d90-4fff-8d67-f245f3f6676d" />
+
+## Result
+Thus, the program has been executed successfully.
